@@ -10,7 +10,7 @@ public class DatabaseConnectionTest {
         String password = "xXjkdpidvpaFbEXHQKeRMzblJvRBGkiU";
 
         try {
-            // Загрузка драйвера вручную (необязательно для новых версий Java, но полезно для совместимости)
+            // Загрузка драйвера вручную
             Class.forName("org.postgresql.Driver");
 
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
