@@ -1,0 +1,6 @@
+com\BlathersMuseum\tracker\dao\UserDAOImplementation.class
+com\BlathersMuseum\tracker\dao\UserDAO.class
+com\BlathersMuseum\tracker\web\WebController.class
+com\BlathersMuseum\tracker\TrackerApplication.class
+com\BlathersMuseum\tracker\security\WebSecurityConfiguration.class
+com\BlathersMuseum\tracker\entity\User.class
