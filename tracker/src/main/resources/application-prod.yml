@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://${viaduct.proxy.rlwy.net}:${32567}/${railway}
-    username: ${root}
-    password: ${WKgtSQCkCVJBExUhKzrvHlcTQjdBXgor}
+    url: jdbc:mysql://viaduct.proxy.rlwy.net:32567/railway
+    username: root
+    password: WKgtSQcKCvJBExUhKzrvHlTcQjdBXgor
     name: ecommerceDB
 
   sql:
