@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Register</title>
-    <!-- tutorial by:   https://www.w3schools.com/html/html_favicon.asp#:~:text=To%20add%20a%20favicon%20to,is%20%22favicon.ico%22.-->
+
     <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
 
     <!--Bootstrap-->
@@ -33,7 +33,7 @@
         <div class="form_background">
             <form class="sign_in_form" name="registration_form" th:action="@{/register}" th:object="${user}" method="post" onsubmit="return checkIfPasswordsMatch();">
                 <div class="sign_in_text">Register</div>
-                <!--thymeleaf expressions and bootstrap style for alerts (th:classappend: https://stackoverflow.com/questions/25133807/thymeleaf-how-to-use-conditionals-to-dynamically-add-remove-a-css-class)-->
+                <!--thymeleaf expressions and bootstrap style for alerts -->
                 <div th:if="${message}" class="alert alert_style" th:classappend="${message.contains('successful') ? 'alert-success' : 'alert-danger'}" id="form_alert">
                     <p th:text="${message}"></p>
                 </div>

@@ -18,7 +18,6 @@
     min-height: 500px;
 }
 
-/*flex 50%: https://www.w3schools.com/cssref/css3_pr_flex.php*/
 .image_background{
     display: flex;
     position: relative;
@@ -62,8 +61,6 @@
     font-weight: 700;
     font-style: normal;
 }
-
-/* how to change placeholder's style: https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder*/
 .form-control::placeholder{
     color: #ababab;
 }
@@ -103,7 +100,6 @@
     margin: 10px auto;
 }
 
-/*for buttons : https://www.w3schools.com/css/css3_buttons.asp*/
 #sign_in_button{
     transition-duration: 0.1s;
     border-radius: 7px;
@@ -303,6 +299,7 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
 .social_media_icon_style:hover{
     border-color: #eeeeee;
 }
+
 /* responsive design for different screen sizes */
 @media only screen and (max-width: 810px ) {
     .index_background {
@@ -368,31 +365,65 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
 
 /* homepage and profile pages CSS */
 
-.homepage_background {
-    background-image: url('https://ik.imagekit.io/j4bkscjr3/texture.jpg?updatedAt=1715960825692');
+.app_background {
+    background-image: url('https://ik.imagekit.io/j4bkscjr3/texture.webp');
     background-repeat: repeat;
     background-size: auto;
     background-attachment: fixed;
     border-radius: 15px;
-    margin: 15px;
+    margin: 14px;
+    min-height: 96vh;
+    overflow: auto;
+}
+
+.logo{
+    border-radius:25%;
+    margin-left:15px;
 }
 
 .navbar{
     font-family: "Ubuntu", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
+    font-size: 18px;
     background-color: #E4D8B5;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+    white-space: nowrap;
+    color: #6d4938;
 }
 
-.navbar a{
-    color:#5c4033;
+.active, .nav-link:hover{
+    color: #412d24 !important;
+}
+
+.input_wrapper{
+    text-align: center;
+}
+
+.table_search {
+    background-color: #fcfbf7 ;
+    border-color: #ddcea2;
+    border-radius: 12px;
+    max-width:95%;
+    box-shadow: 3px 3px 3px #6ab991;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+}
+
+.table_search:focus {
+    background-color: #fcfbf7 ;
+    border-color: #c6b991;
+    box-shadow: 3px 3px 3px #6ab991;
 }
 
 .divider_wrapper{
     position: relative;
 }
+
+/* https://www.shapedivider.app */
 
 .custom-shape-divider-top {
     position: absolute;
@@ -415,7 +446,188 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
     fill: #E4D8B5;
 }
 
-/** For mobile devices **/
+.collapse_button{
+    font-size: 18px;
+    margin-top: 20px;
+    background: url('https://ik.imagekit.io/j4bkscjr3/wood_texture.webp') ;
+    background-repeat: repeat;
+    background-size: contain;
+    border-color: #d39155;
+    color:#52392d;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    box-shadow: 3px 3px 3px #6ab991;
+}
+
+.collapse_button:hover  {
+    border-color: #bd824c;
+    color: #493328;
+}
+
+.collapse_button:active  {
+    border-color: #bd824c !important;
+    color: #493328 !important;
+}
+
+.homepage_container{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.homepage_table_wrapper{
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 7px 7px 5px #6ab991;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.homepage_table_wrapper thead, .homepage_table_wrapper th, .homepage_table_wrapper td {
+    color:#52392d;
+    text-align: center;
+}
+
+.homepage_table{
+    margin-bottom: 0;
+    border-radius: 15px;
+}
+
+table.homepage_table{
+    border: 1px  solid #c6b991;
+}
+
+table.homepage_table thead th {
+    background-color: #e4d8b5 !important;
+}
+
+table.homepage_table tbody tr:nth-of-type(odd) td {
+    background-color: #eee7d2 !important;
+}
+
+table.homepage_table tbody tr:nth-of-type(even) td  {
+    background-color: #e4d8b5 !important;
+}
+
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+}
+
+.owl_profile_img{
+    max-width: 55%;
+    max-height: 55%;
+    margin: auto;
+    padding: 20px;
+}
+
+.owl_profile_img_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.my_profile_container{
+    background: url('https://ik.imagekit.io/j4bkscjr3/texture_acorn.webp') ;
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    max-width: 90%;
+    background-color: #b3946a;
+    border-radius: 25px;
+    box-shadow: 7px 7px 5px #6ab991;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 75px;
+    margin-bottom: 25px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    color:#52392d;
+}
+
+.my_profile_text_container{
+    text-align:justify;
+    margin-top: 25px;
+    background-color: #c9a586;
+    max-width: 85%;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+#progress_text{
+    margin: 15px;
+}
+
+#mod_apply_text{
+    margin: 15px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#mod_apply_text p {
+    margin-right: 10px;
+}
+
+.progress{
+    margin-top: 25px;
+}
+.appoint_form_container{
+    text-align: center;
+    margin-top: 25px;
+    background-color: #c9a586;
+    max-width: 90%;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.appoint_button{
+    margin-top: 15px;
+}
+
+.update_button{
+    margin: 15px;
+}
+
+.mod_container_text{
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.form_update_wrapper label, .form_update_wrapper input{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.hidden_mod_container {
+    text-align: center;
+    margin-top: 25px;
+    background-color: #c9a586;
+    max-width: 90%;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.mod_container_text{
+    margin: 45px;
+}
+
+/* responsive design for different screen sizes */
 @media (max-width: 767px) {
     .custom-shape-divider-top svg {
         width: calc(144% + 1.3px);

@@ -11,22 +11,29 @@ import com.BlathersMuseum.tracker.entity.User;
 @Repository
 public class UserDAOImplementation implements UserDAO{
 
+    //injecting
     private EntityManager entityManager;
     private PasswordEncoder passwordEncoder;
 
+    //constructor for injected
     @Autowired
     public UserDAOImplementation (EntityManager entityManager, PasswordEncoder passwordEncoder){
         this.entityManager = entityManager;
         this.passwordEncoder = passwordEncoder;
     }
 
+    //saving the user to the db
     @Override
     @Transactional
-    public void save (User theUser){
-        theUser.setPassword(passwordEncoder.encode(theUser.getPassword()));
-        entityManager.persist (theUser);
+    public void save(User theUser) {
+        User existingUser = searchByUserName(theUser.getUserName());
+        if (existingUser == null) {
+            theUser.setPassword(passwordEncoder.encode(theUser.getPassword()));
+        }
+        entityManager.persist(theUser);
     }
 
+    //checks the user in the database by userName
     @Override
     @Transactional
     public User searchByUserName(String userName) {
@@ -35,10 +42,11 @@ public class UserDAOImplementation implements UserDAO{
             query.setParameter("userName", userName);
             return query.getSingleResult();
         } catch (Exception e) {
-            return null; // User not found
+            return null; 
         }
     }
 
+    //returns true if the username is not unique (matches found)
     @Override
     @Transactional
     public boolean isUserNameNotUnique(String userName) {

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Welcome</title>
-    <!-- tutorial by:   https://www.w3schools.com/html/html_favicon.asp#:~:text=To%20add%20a%20favicon%20to,is%20%22favicon.ico%22.-->
+
     <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
 
     <!--Bootstrap-->
@@ -34,7 +34,6 @@
 
         <!--form using bootstrap-->
         <div class="form_background">
-            <!-- custom login form: https://docs.spring.io/spring-security/site/docs/5.5.x/guides/form-javaconfig.html-->
             <form class = "sign_in_form" name="form" th:action="@{/login}" method="post">
                 <div class="sign_in_text">
                     Sign in

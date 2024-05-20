@@ -18,26 +18,31 @@ import java.util.Collections;
 @EnableWebSecurity
 public class WebSecurityConfiguration {
 
+    //encode passwords
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    //authentification of the users/roles
     @Bean
     public UserDetailsService userDetailsService(UserDAO userDAO) {
         return username -> {
             User user = userDAO.searchByUserName(username);
+            //if user exists gets the user details
             if (user != null) {
                 return new org.springframework.security.core.userdetails.User(
                         user.getUserName(),
                         user.getPassword(),
-                        Collections.singletonList(new SimpleGrantedAuthority("USER")));
+                        Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().getRoleName().toUpperCase())));
             } else {
+                //throwing exception if user not found
                 throw new UsernameNotFoundException("User '" + username + "' not found");
             }
         };
     }
 
+    //security filter chain
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http, UserDetailsService userDetailsService) throws Exception {
         http

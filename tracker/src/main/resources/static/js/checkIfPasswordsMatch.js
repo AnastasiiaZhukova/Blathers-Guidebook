@@ -1,3 +1,4 @@
+//checking if passwords match
 function checkIfPasswordsMatch() {
     var password = document.getElementById('InputPassword').value;
     var confirmPassword = document.getElementById('InputConfirmPassword').value;

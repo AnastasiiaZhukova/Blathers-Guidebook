@@ -1,14 +1,16 @@
-function updateCollectableStatus(id, collected) {
-        fetch('/update-collectable/' + id, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': /*[[${_csrf.token}]]*/''
-            },
-            body: JSON.stringify({ collected: collected })
-        }).then(response => {
-            if (!response.ok) {
-                alert("Failed to update status");
-            }
-        });
-    }
+//using csrf token (checkbox) updates isCollected
+function updateCollectableStatus(checkbox, collectableId, collectableType) {
+
+    var isCollected = checkbox.checked;
+    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    fetch('/update', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+        //object to json str
+        body: JSON.stringify({ collectableId: collectableId, isCollected: isCollected, collectableType: collectableType })
+    });
+}

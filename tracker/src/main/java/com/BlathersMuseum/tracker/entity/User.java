@@ -16,15 +16,22 @@ public class User {
     @Column(name="password")
     private String password;
 
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
+
+    //constructors
     public User(){
 
     }
 
-    public User(String password, String userName) {
-        this.password = password;
+    public User(String userName, String password, Role role) {
         this.userName = userName;
+        this.password = password;
+        this.role = role;
     }
 
+    //getters and setters
     public int getUserId() {
         return userId;
     }
@@ -49,12 +56,21 @@ public class User {
         this.password = password;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id=" + userId +
-                ", user name='" + userName + '\'' +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
+                ", role=" + role +
                 '}';
     }
 }
